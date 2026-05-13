@@ -1,0 +1,50 @@
+{
+  "name": "multimodal-project",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/amita": "^5.2.8",
+    "@fontsource/architects-daughter": "^5.2.7",
+    "@fontsource/caveat": "^5.2.8",
+    "@fontsource/dancing-script": "^5.2.8",
+    "@fontsource/dekko": "^5.2.8",
+    "@fontsource/homemade-apple": "^5.2.8",
+    "@fontsource/indie-flower": "^5.2.7",
+    "@fontsource/kalam": "^5.2.8",
+    "@fontsource/patrick-hand": "^5.2.8",
+    "@fontsource/playpen-sans-deva": "^5.2.4",
+    "@fontsource/shadows-into-light": "^5.2.8",
+    "opentype.js": "^1.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tldraw": "^2.4.6",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^16.0.1",
+    "@types/opentype.js": "^1.3.9",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.27",
+    "jsdom": "^26.0.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.6",
+    "vitest": "^2.1.4"
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-win32-x64-msvc": "^4.2.3"
+  }
+}
