@@ -1,0 +1,9 @@
+{
+  "id": "columnar-1",
+  "shapes": [
+    { "x": 100, "y": 0, "width": 40, "height": 24 },
+    { "x": 102, "y": 36, "width": 38, "height": 24 },
+    { "x": 101, "y": 72, "width": 39, "height": 24 }
+  ],
+  "expected_side": "below"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "single-best-side-1",
+  "shapes": [
+    { "x": 200, "y": 200, "width": 80, "height": 40 }
+  ],
+  "expected_side": "below"
+}

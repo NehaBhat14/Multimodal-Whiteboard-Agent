@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+pytest
+pypdf
+numpy
+rank-bm25
+requests
+ddgs>=9.0.0

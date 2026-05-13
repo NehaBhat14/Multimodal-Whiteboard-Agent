@@ -1,0 +1,140 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+/* Hard reset so the tldraw canvas gets real viewport pixels. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
+}
+
+.tldraw-divider-handle {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Model view overlay: only mounted while generating; entrance + gentle pulse */
+@keyframes model-view-pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  72% {
+    opacity: 1;
+    transform: scale(1.012);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes model-view-pulse-blue {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.22);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 14px 2px rgba(59, 130, 246, 0.2);
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes model-view-pulse-amber {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.18);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 16px 3px rgba(245, 158, 11, 0.22);
+    filter: brightness(1.04);
+  }
+}
+
+@keyframes model-view-legend-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.model-view-overlay-viewport {
+  transform-origin: center center;
+  animation:
+    model-view-pop-in 0.44s cubic-bezier(0.34, 1.2, 0.64, 1) both,
+    model-view-pulse-blue 2.35s ease-in-out infinite 0.44s;
+}
+
+.model-view-overlay-crop {
+  transform-origin: center center;
+  animation:
+    model-view-pop-in 0.48s cubic-bezier(0.34, 1.2, 0.64, 1) 0.06s both,
+    model-view-pulse-amber 2.35s ease-in-out infinite 0.54s;
+}
+
+.model-view-overlay-legend {
+  animation: model-view-legend-in 0.4s ease-out 0.1s both;
+}
+
+/* Generate button: shimmer stays inside button bounds (overflow hidden on button) */
+@keyframes generate-btn-shimmer {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+.generate-response-btn--working {
+  position: relative;
+}
+
+.generate-response-btn--working::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 62%
+  );
+  animation: generate-btn-shimmer 2.1s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.dark .generate-response-btn--working::after {
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.14) 50%,
+    transparent 62%
+  );
+}
+
